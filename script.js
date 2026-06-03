@@ -42,15 +42,45 @@
 //   `Итоговая сумарная нагрузка активных подстанций составляет ${totalLoad} MW`,
 // );
 
+// async function getUsers() {
+//   try {
+//     const response = await fetch("https://jsonplaceholder.typicode.com/users");
+//     const data = await response.json();
+//     const info = data
+//       .filter((el) => el.id < 6)
+//       .map(({ name, email }) => `Пользователь: ${name}, Email: ${email}`);
+
+//     console.log(info);
+//   } catch (error) {
+//     console.error("Произошла ошибка при загрузке данных:", error.message);
+//   }
+// }
+
+// getUsers();
+
 async function getUsers() {
   try {
     const response = await fetch("https://jsonplaceholder.typicode.com/users");
     const data = await response.json();
+
+    // 1. Находим наш пустой div из HTML
+    const usersContainer = document.getElementById("users-list");
+
+    // 2. Формируем массив HTML-карточек вместо обычных строк
     const info = data
       .filter((el) => el.id < 6)
-      .map(({ name, email }) => `Пользователь: ${name}, Email: ${email}`);
+      .map(
+        ({ name, email }) => `
+      <div class="user-card" style="border: 2px solid #4caf50; padding: 15px; margin: 15px 0; border-radius: 8px; font-family: sans-serif; background-color: #f9f9f9;">
+          <h3 style="margin-top: 0; color: #2e7d32;">👤 ${name}</h3>
+          <p style="margin-bottom: 0; color: #555;">✉️ Email: ${email}</p>
+        </div>
+      `,
+      );
 
-    console.log(info);
+    // 3. Склеиваем массив карточек в одну большую HTML-строку и вставляем в div
+
+    usersContainer.innerHTML = info.join("");
   } catch (error) {
     console.error("Произошла ошибка при загрузке данных:", error.message);
   }
