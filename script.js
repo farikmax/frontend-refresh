@@ -86,4 +86,7 @@ async function getUsers() {
   }
 }
 
-getUsers();
+// Находим кнопку в HTML
+const btn = document.getElementById("load-btn");
+// Вешаем слушатель: при клике выполнить функцию getUsers
+btn.addEventListener("click", getUsers);
