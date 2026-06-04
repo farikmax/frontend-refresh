@@ -1,0 +1,44 @@
+/* Базовые стили для кнопки */
+#load-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Эффект наведения на кнопку */
+#load-btn:hover {
+  background-color: #21af3b;
+  transform: scale(1.03);
+}
+
+/* Состояние загрузки кнопки */
+#load-btn:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+  transform: scale(1);
+}
+
+/* Стили для карточек пользователей */
+.user-card {
+  border: 2px solid #4caf50;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 8px;
+  font-family: sans-serif;
+  background-color: #f9f9f9;
+}
+
+.user-card h3 {
+  margin-top: 0;
+  color: #2e7d32;
+}
+
+.user-card p {
+  margin-bottom: 0;
+  color: #555;
+}
