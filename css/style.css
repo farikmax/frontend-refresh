@@ -27,7 +27,6 @@
 .user-card {
   border: 2px solid #4caf50;
   padding: 15px;
-  margin: 15px 0;
   border-radius: 8px;
   font-family: sans-serif;
   background-color: #f9f9f9;
@@ -41,4 +40,12 @@
 .user-card p {
   margin-bottom: 0;
   color: #555;
+}
+
+/* Настраиваем сетку для контейнера карточек */
+#users-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
